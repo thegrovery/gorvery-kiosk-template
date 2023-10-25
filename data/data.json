@@ -1,0 +1,10 @@
+{
+  "title": "Grovery Kiosk Experience", 
+  "siteTitleBase":"Grovery Kiosk Experience",
+  "description": "Simple blog template meant to be built on top of.",
+  "author": "Alec Reimel",
+  "organization": "The Grovery, LLC",
+  "github": "https://github.com/alecr-thegrovery/BMS-Kiosk",
+  "accentColor1": "#007B98",
+  "accentColor2": "#00DFC3"
+}

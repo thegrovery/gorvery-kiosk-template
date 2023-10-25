@@ -1,0 +1,204 @@
+/*========================================*/
+//	Big SCSS Comment
+//	
+//	Put your notes here.
+//	
+/*========================================*/
+
+/*======================= */
+/* ===== BMS Humanity ===== */
+/* ======================= */
+
+	@font-face {
+	    font-family: 'bms_humanitybold';
+	    src: url('/fonts/bms-humanity/bmshumanity-bold-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-bold-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanitybold_italic';
+	    src: url('/fonts/bms-humanity/bmshumanity-bolditalic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-bolditalic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanityextrabold';
+	    src: url('/fonts/bms-humanity/bmshumanity-extrabold-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-extrabold-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanityitalic';
+	    src: url('/fonts/bms-humanity/bmshumanity-italic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-italic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanitylight';
+	    src: url('/fonts/bms-humanity/bmshumanity-light-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-light-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanitylight_italic';
+	    src: url('/fonts/bms-humanity/bmshumanity-lightitalic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-lightitalic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanityregular';
+	    src: url('/fonts/bms-humanity/bmshumanity-regular-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-regular-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanitythin';
+	    src: url('/fonts/bms-humanity/bmshumanity-thin-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-thin-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanitythin_italic';
+	    src: url('/fonts/bms-humanity/bmshumanity-thinitalic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity/bmshumanity-thinitalic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+
+/* ========================== */
+/* ===== BMS Humanity NW ===== */
+/* ========================== */
+
+	@font-face {
+	    font-family: 'bms_humanity_nwbold';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-bold-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-bold-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwbold_italic';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-bolditalic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-bolditalic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwextrabold';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-extrabold-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-extrabold-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwitalic';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-italic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-italic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwlight';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-light-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-light-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwlight_italic';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-lightitalic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-lightitalic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwregular';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-regular-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-regular-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwthin';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-thin-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-thin-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_nwthin_italic';
+	    src: url('/fonts/bms-humanity-nw/bmshumanitynw-thinitalic-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-nw/bmshumanitynw-thinitalic-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+
+	}
+
+/* ========================== */
+/* ===== BMS Humanity AR ===== */
+/* ========================== */
+
+	@font-face {
+	    font-family: 'bms_humanity_arbold';
+	    src: url('/fonts/bms-humanity-ar/bmshumanityar-bold-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-ar/bmshumanityar-bold-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_arextrabold';
+	    src: url('/fonts/bms-humanity-ar/bmshumanityar-extrabold-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-ar/bmshumanityar-extrabold-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_arlight';
+	    src: url('/fonts/bms-humanity-ar/bmshumanityar-light-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-ar/bmshumanityar-light-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_arregular';
+	    src: url('/fonts/bms-humanity-ar/bmshumanityar-regular-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-ar/bmshumanityar-regular-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'bms_humanity_arthin';
+	    src: url('/fonts/bms-humanity-ar/bmshumanityar-thin-webfont.woff2') format('woff2'),
+	         url('/fonts/bms-humanity-ar/bmshumanityar-thin-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}

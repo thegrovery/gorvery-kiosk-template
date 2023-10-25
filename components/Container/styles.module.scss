@@ -1,0 +1,28 @@
+@import "@styles/vars.module.scss";
+
+.Container{
+	width: 100%;
+	max-width: $contentWidthMd;
+	margin: auto;
+	padding: 0 clamp(15px, 3vw, 35px);
+	position: relative;
+
+	&[data-width="contentWidthMin"]{
+		max-width: $contentWidthMin;
+	}
+	&[data-width="contentWidthSm"]{
+		max-width: $contentWidthSm;
+	}
+	&[data-width="contentWidthMd"]{
+		max-width: $contentWidthMd;
+	}
+	&[data-width="contentWidthLg"]{
+		max-width: $contentWidthLg;
+	}
+	&[data-width="contentWidthXl"]{
+		max-width: $contentWidthXl;
+	}
+	&[data-width="contentWidthMax"]{
+		max-width: $contentWidthMax;
+	}
+}

@@ -1,0 +1,821 @@
+/*========================================*/
+//	Action State Styles
+//	
+//	Use this file to set the styles for when 
+//	actions are being performed.  
+//	
+//	Use the base selector:
+//		#LayoutOuter[data-action-state=""]
+//	and use the data-attr to reference the action
+//	
+/*========================================*/
+
+/* ================== */
+/* ===== Imports ===== */
+/* ================== */
+  @import "@styles/vars.module.scss";
+
+
+/* =================================== */
+/* ===== Vars & Mixins & Keyframes ===== */
+/* =================================== */
+  //SYNTAX:
+  //var:        width: $varName;
+  //mixin:   @include mixinName;
+
+  @mixin hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    //visibility: hidden;
+  }
+
+  @mixin visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    //visibility: visible;
+  }
+
+  @keyframes fillPurple {
+    from {
+      fill: $white;
+    }
+    to {
+      fill: $accentColor2;
+    }
+  }
+
+/* =========================== */
+/* ===== General Template ===== */
+/* =========================== */
+
+  #LayoutOuter{
+    &[data-action-state-load~="load-finished"]{
+      
+    }
+    &[data-action-state-load~="just-after-load"]{
+      
+    }
+    &[data-action-state-load~="just-after-load-2"]{
+      
+    }
+    &[data-action-state-load~="load-sequence-complete"]{
+      
+    }
+    //end of block
+  }
+
+/* ========================== */
+/* ===== Page Transition ===== */
+/* ========================== */
+  #LayoutOuter{
+    transition: $transitionMedium;
+    background: $white;
+    &[data-action-state-transition="initial"]{
+      @include visible;
+    }
+    &[data-action-state-transition="hidden"]{
+      @include hidden;
+    }
+    &[data-action-state-transition="visible"]{
+      @include visible;
+    }
+  }
+
+
+/* =========================== */
+/* ===== Cards Animate In  ===== */
+/* =========================== */
+    #LayoutOuter[data-action-state-page="lvl-1"]{
+      [data-animation="fadeInUp"]{
+        transform: translate3d(0em, 8vh, 0em);
+        opacity: 0;
+        pointer-events: none;          
+        transition: 0s;
+      }
+
+
+
+      &[data-action-state-cards-show="initial"]{
+        [data-animation="fadeInUp"]{
+          transform: translate3d(0em, 8vh, 0em);
+          opacity: 0;
+          pointer-events: none;          
+          transition: 0s;
+        } 
+      }
+
+      &[data-action-state-cards-show~="animate-start'"]{
+        [data-animation="fadeInUp"]{
+          transform: translate3d(0em, 8vh, 0em);
+          opacity: 0;
+          pointer-events: none;          
+          transition: $transitionSlow;
+          $delay: 0.15s;
+          &[data-animation-delay="1"]{
+            transition-delay: calc(1 * #{$delay}) ;
+          }
+          &[data-animation-delay="2"]{
+            transition-delay: calc(2 * #{$delay}) ;
+          }
+          &[data-animation-delay="3"]{
+            transition-delay: calc(3 * #{$delay}) ;
+          }
+          &[data-animation-delay="4"]{
+            transition-delay: calc(4 * #{$delay}) ;
+          }
+        } 
+      }
+
+      &[data-action-state-cards-show~="visible"]{
+        [data-animation="fadeInUp"]{
+          transform: translate3d(0em, 0vh, 0em);
+          opacity: 1;
+          pointer-events: auto;          
+          transition: $transitionSlow;
+          $delay: 0.15s;
+          &[data-animation-delay="1"]{
+            transition-delay: calc(1 * #{$delay}) ;
+          }
+          &[data-animation-delay="2"]{
+            transition-delay: calc(2 * #{$delay}) ;
+          }
+          &[data-animation-delay="3"]{
+            transition-delay: calc(3 * #{$delay}) ;
+          }
+          &[data-animation-delay="4"]{
+            transition-delay: calc(4 * #{$delay}) ;
+          }
+        } 
+      }
+      &[data-action-state-cards-show~="post-visible"]{
+        [data-animation="fadeInUp"]{
+          transform: translate3d(0em, 0vh, 0em);
+          opacity: 1;
+          pointer-events: auto;        
+          transition: 0s;
+          transition-delay: 0s !important;
+        } 
+      }
+
+      &[data-action-state-cards-show~="transition-out-pre"]{
+        [data-animation="fadeInUp"]{
+          transition: $transitionSlow !important;
+          $delay: 0.15s;
+          &[data-animation-delay="1"]{
+            transition-delay: calc(1 * #{$delay}) !important;
+          }
+          &[data-animation-delay="2"]{
+            transition-delay: calc(2 * #{$delay}) !important;
+          }
+          &[data-animation-delay="3"]{
+            transition-delay: calc(3 * #{$delay}) !important;
+          }
+          &[data-animation-delay="4"]{
+            transition-delay: calc(4 * #{$delay}) !important;
+          }
+        }
+      }
+      &[data-action-state-cards-show~="transition-out"]{
+        [data-animation="fadeInUp"]:not(.drop--me){
+          transform: translate3d(0em, 8vh, 0em);
+          opacity: 0;
+          pointer-events: none;          
+          transition: $transitionSlow !important;
+          $delay: 0.15s;
+          &[data-animation-delay="1"]{
+            transition-delay: calc(1 * #{$delay}) !important;
+          }
+          &[data-animation-delay="2"]{
+            transition-delay: calc(2 * #{$delay}) !important;
+          }
+          &[data-animation-delay="3"]{
+            transition-delay: calc(3 * #{$delay}) !important;
+          }
+          &[data-animation-delay="4"]{
+            transition-delay: calc(4 * #{$delay}) !important;
+          }
+          &.drop--me{
+            transform: translate3d(0em, 0vh, 0em) !important;
+            opacity: 1 !important;
+          }
+        } 
+      }
+      //end
+    }
+
+/* ================================= */
+/* ===== Draggable Card States ===== */
+/* ================================ */
+
+  /* ===== Global ===== */
+    .draggable{
+      z-index: 21;
+      .inner{
+        transition: $transitionMedium;
+        &:after{
+          content:'';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(33, 33, 33, 0.5);
+          border-radius: 4%;
+          transition: $transitionMedium;
+          opacity:0;
+        }
+      }
+      
+      &.getting--dragged{
+         z-index: 100 !important;
+        .inner{
+            transform: rotate(15deg) translate(0, -6vh) !important;
+            box-shadow: $niceShadowShort;
+          }
+        } 
+    }
+  
+  /* ===== Page lvl 1 ===== */
+  #LayoutOuter[data-action-state-page="lvl-1"]{
+    //Color Filters
+      &[data-action-state-load~="just-after-load-2"],
+      &[data-action-state-load~="load-sequence-complete"]{
+        .cardsFilter,
+        .colorFilter{
+          opacity:0.15;
+        }
+        &[data-action-state-cards~="card-interaction"]{
+          .cardsFilter,
+          .colorFilter{
+            opacity:0.5;
+          }
+          .draggable:not(.getting--dragged){
+            pointer-events: none;
+            .inner{
+                transform: translate(0, 2vh) !important;
+                box-shadow: none;
+
+                &:after{
+                  opacity:0.5;
+                }
+              }
+            } 
+        }
+        &[data-action-state-cards~="card-post-interaction"]{
+          .cardsFilter,
+          .colorFilter{
+            opacity:0.15;
+          }
+        }
+      }
+  
+    //Emphasize first card
+      &[data-action-state-load~="load-sequence-complete"]{
+        #enrollment .inner{
+          transform: translate(0, -4vh);
+        }
+        #enrollment [data-tooltip]{
+          transform: translate(-50%, -4vh);
+        }
+        &[data-action-state-cards~="card-interaction"]{
+          #enrollment .inner{
+            transform: translate(0, 0);
+          }
+          #enrollment [data-tooltip]{
+            transform: translate(-50%, 0);
+          }
+        }
+        &[data-action-state-cards~="card-post-interaction"]{
+          #enrollment .inner{
+            transform: translate(0, 0);
+          }
+          #enrollment [data-tooltip]{
+            transform: translate(-50%, 0);
+          }
+        }
+
+        
+      }
+
+    //Sidebar Animation
+      &[data-action-state-cards~="card-interaction"]{
+        #scannerBorder{
+          border-color: $accentColor2;
+        }
+        #ScannerIcon{
+          $duration: 0.15s;
+          $iteration: 1;
+          [data-name="hand"] path{
+            animation-name: fillPurple;
+             animation-duration: $duration;
+             animation-iteration-count: $iteration;
+             animation-fill-mode: forwards;
+             animation-delay: 0.25s;
+          }
+          [data-name="wave-1"]{
+            animation-name: fillPurple;
+             animation-duration: $duration;
+             animation-iteration-count: $iteration;
+             animation-fill-mode: forwards;
+             animation-delay: 0.5s;
+          }
+          [data-name="wave-2"]{
+            animation-name: fillPurple;
+             animation-duration: $duration;
+             animation-iteration-count: $iteration;
+             animation-fill-mode: forwards;
+             animation-delay: 0.75s;
+          }
+          [data-name="wave-3"]{
+            animation-name: fillPurple;
+             animation-duration: $duration;
+             animation-iteration-count: $iteration;
+             animation-fill-mode: forwards;
+             animation-delay: 1s;
+          }
+          [data-name="wave-4"]{
+            animation-name: fillPurple;
+             animation-duration: $duration;
+             animation-iteration-count: $iteration;
+             animation-fill-mode: forwards;
+             animation-delay: 1.25s;
+          }
+        }
+        #scannerLight{
+          &>div{
+            background-color: $accentColor2;
+          }
+        }
+        //end
+      }
+      
+  }
+
+  /* ===== Page lvl 2 ===== */
+  #LayoutOuter[data-action-state-page="lvl-2"]{
+    .draggable{
+      .inner{
+        transform: rotate(3deg);
+      }
+    } 
+    
+    .getting--dragged{
+      .inner{
+          transform: rotate(15deg) translate(0, -6vh) scale(0.75) !important;
+        }
+      }
+
+    /* ===== Doors - Swing Open ===== */ 
+    [data-door]{
+      //transition: $transitionMedium;
+      background-color: $black;
+      .doorInner{
+        overflow: hidden;
+      }
+      .doorInner{
+        fill: $black;
+      }
+      .doorInnerAnimate{
+        transition: $transitionMedium;
+        transform-origin: 145% 0%;
+        perspective: 0px;
+        will-change: transform;
+      }
+      &.can--catch{
+        .doorInnerBlack{
+          outline: $clampExtraExtraSmall solid $accentColor;
+        }
+        .doorInnerAnimate{
+          transform: rotateY(45deg) translate3d(0, 0, 0);
+        }
+      }
+      
+    }
+    
+  }
+
+  /* ===== Page lvl 3 ===== */
+  #LayoutOuter[data-action-state-page="lvl-3"]{
+    .draggable{
+      pointer-events: none;
+      .inner{
+        transform: rotate(3deg);
+      }
+    }
+  }
+
+/* =================== */
+/* ===== Tooltips ===== */
+/* =================== */
+  
+  /* ===== Page lvl 1 ===== */
+  #LayoutOuter[data-action-state-page="lvl-1"]{
+    [data-tooltip]{
+      @include hidden;
+    }
+    &[data-action-state-tooltips="initial-hide"]{
+      [data-tooltip]{
+        @include hidden;
+      }
+    }
+    &[data-action-state-tooltips="show-after-load"]{
+      [data-tooltip="lvl-1-card-instructions"]{
+        @include visible;
+      }
+    }
+    &[data-action-state-tooltips="card-interaction"]{
+      [data-tooltip="lvl-1-card-instructions"]{
+        @include hidden;
+      }
+      [data-tooltip="lvl-1-place-card-here"]{
+        @include visible;
+      }
+    }
+    &[data-action-state-tooltips="card-post-interaction"]{
+      [data-tooltip="lvl-1-card-instructions"]{
+        @include hidden;
+      }
+      [data-tooltip="lvl-1-place-card-here"]{
+        @include hidden;
+      }
+    }
+    //end of block
+  }
+
+  /* ===== Page lvl 2 ===== */
+  #LayoutOuter[data-action-state-page="lvl-2"]{
+    &[data-action-state-cards~="card-interaction"]{
+      [data-tooltip]{
+        @include hidden;
+      }
+    }
+    &[data-action-state-cards~="card-post-interaction"]{
+      [data-tooltip]{
+        @include hidden;
+      }
+    }
+  }
+
+/* ================================== */
+/* ===== Level 3 Page Transitions ===== */
+/* ================================== */
+
+  #LayoutOuter[data-action-state-page="lvl-3"]{
+    //Default animation vars, override below
+      $zoomFocus: 50% 83%;
+      $zoomAmount: 2.5;
+      transform-origin: $zoomFocus;
+      [data-transition-screen="1"] svg,
+      [data-transition-screen="1"] img{
+        opacity: 1;
+      }
+      /* ===== Initial Animation State ===== */
+      &[data-action-state-transition-screen~="initial"]{
+        //Individual Screens
+          [data-transition-screen="1"] svg,
+          [data-transition-screen="1"] img{
+            $zoomFocus: calc(50% + 100px) calc(60% + 100px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="2"] svg,
+          [data-transition-screen="2"] img{
+            $zoomFocus: calc(41% + 80px) calc(13% + 65px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="3"] svg,
+          [data-transition-screen="3"] img{
+            $zoomFocus: calc(68% + 80px) calc(72% + 50px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="4"] svg,
+          [data-transition-screen="4"] img{
+            $zoomFocus: 65% 55%;
+            //$zoomFocus: calc(65% + 80px) calc(55% + 50px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="5"] svg,
+          [data-transition-screen="5"] img{
+            $zoomFocus: calc(5% + 0px) calc(81% + 80px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="6"] svg,
+          [data-transition-screen="6"] img{
+            $zoomFocus: calc(46% + 0px) calc(60% + 80px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="7"] svg,
+          [data-transition-screen="7"] img{
+            $zoomFocus: 20% 71%;
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="8"] svg,
+          [data-transition-screen="8"] img{
+            $zoomFocus: calc(36% + 0px) calc(48% + 100px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="9"] svg,
+          [data-transition-screen="9"] img{
+            $zoomFocus: calc(80% + 0px) calc(64% + 50px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+          [data-transition-screen="10"] svg,
+          [data-transition-screen="10"] img{
+            $zoomFocus: calc(45% + 0px) calc(64% + 100px);
+            transform-origin: $zoomFocus;
+            opacity: 1;
+          }
+      }
+
+      /* ===== First Action - Zoom ===== */
+      &[data-action-state-transition-screen~="zoom"]{
+        //screens
+          [data-transition-screen="1"] svg,
+          [data-transition-screen="1"] img{
+            $zoomFocus: calc(50% + 100px) calc(60% + 100px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 2.5; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="2"] svg,
+          [data-transition-screen="2"] img{
+            $zoomFocus: calc(41% + 80px) calc(13% + 65px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 3.5; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="3"] svg,
+          [data-transition-screen="3"] img{
+            $zoomFocus: calc(68% + 80px) calc(72% + 50px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 2.15; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="4"] svg,
+          [data-transition-screen="4"] img{
+            $zoomFocus: 65% 55%;
+            //$zoomFocus: calc(65% + 80px) calc(55% + 50px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 2; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="5"] svg,
+          [data-transition-screen="5"] img{
+            $zoomFocus: calc(5% + 0px) calc(81% + 80px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 2.75; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="6"] svg,
+          [data-transition-screen="6"] img{
+            $zoomFocus: calc(46% + 0px) calc(60% + 80px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 2.5; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="7"] svg,
+          [data-transition-screen="7"] img{
+            $zoomFocus: 20% 71%;
+            transform-origin: $zoomFocus;
+            $zoomAmount: 2.15; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="8"] svg,
+          [data-transition-screen="8"] img{
+            $zoomFocus: calc(36% + 0px) calc(48% + 100px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 1.85; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="9"] svg,
+          [data-transition-screen="9"] img{
+            $zoomFocus: calc(80% + 0px) calc(64% + 50px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 2.15; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+          [data-transition-screen="10"] svg,
+          [data-transition-screen="10"] img{
+            $zoomFocus: calc(45% + 0px) calc(64% + 100px);
+            transform-origin: $zoomFocus;
+            $zoomAmount: 1.65; 
+            transform: scale($zoomAmount);
+            opacity: 1;
+          }
+      }
+
+      /* ===== Second Action - Fade/Zoom ===== */
+      &[data-action-state-transition-screen~="fade"]{
+        //screens
+          [data-transition-screen]{
+            transition: $transitionMedium;
+            opacity: 0 !important;
+            pointer-events: none !important;
+          }
+          [data-transition-screen] svg,
+          [data-transition-screen] img{
+            //keep zoom in, fade out & reveal content
+            transform: scale(4) !important;
+            opacity: 0 !important;
+            
+          }
+      }
+
+      /* ===== Animation End - reset state ===== */
+      &[data-action-state-transition-screen~="end"]{
+          [data-transition-screen],
+          [data-transition-screen] svg,
+          [data-transition-screen] img{
+            //clear everything after animations are complete
+            //transform: none;
+            //transform-origin: none;
+            transition: $transitionMedium;
+            opacity: 0;
+            pointer-events: none;
+          }
+        }
+    //end
+    }
+
+
+
+
+
+
+/* ================================== */
+/* ===== Home BG Zoom/Doors Open  ===== */
+/* ================================== */
+  #LayoutOuter[data-action-state-page="lvl-1"]{
+    
+    //remove color filter
+      &[data-action-state-home-bg~="home-bg-init-enrollment"],
+      &[data-action-state-home-bg~="home-bg-init-access"]
+      &[data-action-state-home-bg~="home-bg-init-financial"]
+      &[data-action-state-home-bg~="home-bg-init-resources"]{
+        .cardsFilter,
+        .colorFilter{
+          opacity:0 !important;
+        }
+      }
+      
+    /* =========================== */
+    /* ===== Enrollment Doors ===== */
+    /* =========================== */
+      &[data-action-state-home-bg~="home-bg-init-enrollment"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(-3% + 0px) calc(93% + 50px);
+        transition: $transitionMedium;
+        transition-timing-function: ease-in;
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-zoom-enrollment"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(-3% + 0px) calc(93% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-open-enrollment"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(-3% + 0px) calc(93% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+        #building1_leftdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(-50px);
+        }
+        #building1_rightdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(50px);
+        }
+      }
+
+    /* ======================= */
+    /* ===== Access Doors ===== */
+    /* ======================= */
+      &[data-action-state-home-bg~="home-bg-init-access"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(13% + 0px) calc(70% + 50px);
+        transition: $transitionMedium;
+        transition-timing-function: ease-in;
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-zoom-access"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(13% + 0px) calc(70% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-open-access"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(13% + 0px) calc(70% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+        #building2_leftdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(-50px);
+        }
+        #building2_rightdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(50px);
+        }
+      }
+
+
+        //end
+  
+    /* ========================== */
+    /* ===== Financial Doors ===== */
+    /* ========================== */
+      &[data-action-state-home-bg~="home-bg-init-financial"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(38% + 0px) calc(70% + 50px);
+        transition: $transitionMedium;
+        transition-timing-function: ease-in;
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-zoom-financial"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(38% + 0px) calc(70% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-open-financial"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(38% + 0px) calc(70% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+        #building3_leftdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(-65px);
+        }
+        #building3_rightdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(65px);
+        }
+      }
+
+    /* ========================== */
+    /* ===== Resources Doors ===== */
+    /* ========================== */
+      &[data-action-state-home-bg~="home-bg-init-resources"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(67% + 0px) calc(90% + 50px);
+        transition: $transitionMedium;
+        transition-timing-function: ease-in;
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-zoom-resources"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(67% + 0px) calc(90% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+      }
+      &[data-action-state-home-bg~="home-bg-open-resources"] [data-name="home background"]{
+        $zoomAmount: 4.25;
+        $zoomFocus: calc(67% + 0px) calc(90% + 50px);
+        transition: $transitionSlow;
+        transition-timing-function: ease-in;
+        transform: scale($zoomAmount);
+        transform-origin: $zoomFocus;
+        #building4_leftdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(-50px);
+        }
+        #building4_rightdoor .animateInner{
+          transition: $transitionMedium;
+          transform: translateX(50px);
+        }
+      }
+
+  }

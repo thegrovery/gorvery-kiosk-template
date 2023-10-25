@@ -1,0 +1,100 @@
+@import "@styles/vars.module.scss";
+
+$backgroundColor: $accentColor;
+$textColor: $white;
+
+.Tooltip{
+	background-color: $backgroundColor;
+	border: solid 2px $backgroundColor;
+	color: $white;
+	font-size: $clampExtraSmall;
+	padding: 0.5em 1em;
+	border-radius: 0.65em;
+	//box-shadow: 0px 0px 2em 0.25em rgba($purple,0.75);
+	z-index: 1000;
+	//aspect-ratio: 1/1;
+	min-width: 300px;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	transition: $transitionMedium;
+	/* ======================= */
+	/* ===== Text Content ===== */
+	/* ======================= */
+	h2{
+		font-size: 1.5em;
+		margin-bottom: 0.25em;
+	}
+	p{
+		font-size: 1em;
+	}
+
+	/* ========================= */
+	/* ===== Arrow Settings ===== */
+	/* ========================= */
+	$arrowSize: 1em;
+	&[data-placement="right"]::before{
+		content: "";
+		position: absolute;
+		left: calc(-1 * #{$arrowSize});
+		top: 50%;
+		transform: translate(0%, -50%);
+		width: 0px;
+		height: 0px;
+		border-top: $arrowSize solid transparent;
+		border-bottom: $arrowSize solid transparent;
+		border-right: $arrowSize solid $backgroundColor;
+	}
+	&[data-placement="left"]{
+		position:absolute;
+		top: 50%;
+		right: calc(100% + #{$arrowSize});
+		transform: translateY(-50%);
+		&::before{
+			content: "";
+			position: absolute;
+			right: calc(-1 * #{$arrowSize});
+			top: 50%;
+			transform: translate(0%, -50%);
+			width: 0px;
+			height: 0px;
+			border-top: $arrowSize solid transparent;
+			border-bottom: $arrowSize solid transparent;
+			border-left: $arrowSize solid $backgroundColor;
+		}
+	}
+	&[data-placement="up"]{
+		position:absolute;
+		//top: calc(-1 * #{$arrowSize});
+		bottom: calc(100% + #{$arrowSize});
+		left: 50%;
+		transform: translate(-50%, 0%);
+		&::before{
+			content: "";
+			position: absolute;
+			left: 50%;
+			bottom: calc(-1 * #{$arrowSize});
+			transform: translate(-50%, 0%);
+			width: 0px;
+			height: 0px;
+			border-right: $arrowSize solid transparent;
+			border-left: $arrowSize solid transparent;
+			border-top: $arrowSize solid $backgroundColor;
+		}
+	}
+	&[data-placement="down"]::before{
+		content: "";
+		position: absolute;
+		left: calc(-1 * #{$arrowSize});
+		bottom: calc(-1 * #{$arrowSize});
+		transform: translate(-50%, 0%);
+		width: 0px;
+		height: 0px;
+		border-top: $arrowSize solid transparent;
+		border-bottom: $arrowSize solid transparent;
+		border-right: $arrowSize solid $backgroundColor;
+	}
+}

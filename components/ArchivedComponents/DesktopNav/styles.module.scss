@@ -1,0 +1,76 @@
+@import "@styles/vars.module.scss";
+
+
+.header{
+	
+	.inner{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 35px;
+		width:100%;
+		max-width: 1650px;
+		margin: auto;
+	}
+
+	.logo{
+		padding:5px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		img{
+			width: 100%;
+			max-width: 150px;
+		}
+
+	}
+
+	.siteName{
+		color: $black;
+		font-size: $clampLarge;
+		margin-left: 1.5vw;
+	}
+
+	.navButton{
+		position: relative;
+		padding:5px;
+		border: solid 2px $black;
+		background-color: transparent;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: $transitionMedium;
+
+		.icon{
+			opacity: 1;
+			transition: inherit;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+		}
+		.iconHover{
+			opacity: 0;
+			transition: inherit;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+		}
+
+		&:hover{
+			background-color: $black;
+			.icon{
+				opacity: 0;
+			}
+			.iconHover{
+				opacity: 1;
+			}
+		}
+
+	}
+}

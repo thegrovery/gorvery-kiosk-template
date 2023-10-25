@@ -1,0 +1,56 @@
+@import "@styles/vars.module.scss";
+
+.BlockQuote{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	background-color: $primaryLightGray;
+	
+	border-radius: $borderRadius;
+	margin-bottom: $clampLarge;
+
+	$fixedWidth: clamp(135px, 15%, 200px);
+	.icon{
+		width: $fixedWidth;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		padding: $clampMedium $clampSmall;
+		.iconImg{
+			width: 100%;
+			max-width: 120px;
+		}
+	}
+	.text{
+		width:calc(100% - #{$fixedWidth});
+		font-size: $clampSmall;
+		padding: $clampMedium;
+		//font-family: $fontBMSLight;
+		padding-left: 0px;
+		padding-right:clamp(35px, 8%, 100px);
+		line-height: 1.2;
+		h2{
+			font-size: inherit;
+			line-height: 1.2;
+			margin-bottom: 0.25em;;
+		}
+		a{
+			color: $purple;
+			text-decoration: underline;
+			position: relative;
+			padding-right: 0.75em;
+			/*border-bottom: solid 1px inherit;*/
+			&:after{
+				content:" > ";
+				text-decoration: none;
+				font-weight: 600;
+				position: absolute;
+				padding-left: 0.15em;
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+export { default } from './SupportModalIcon1'

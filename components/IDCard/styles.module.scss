@@ -1,0 +1,18 @@
+@import "@styles/vars.module.scss";
+
+.IDCard{
+	width: clamp(150px, 15vw, 400px);
+	height: auto;
+	position: relative;
+	z-index: 25;
+	will-change: transform;
+	touch-action: none;
+	svg{
+		width: 100%;
+		height: auto;
+		filter: 
+			drop-shadow(10px 10px 10px rgba($black, 0.5))
+			drop-shadow(-1px -1px 10px rgba($black, 0.5))
+		;
+	}
+}

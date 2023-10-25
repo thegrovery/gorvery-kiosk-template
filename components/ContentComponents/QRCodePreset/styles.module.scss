@@ -1,0 +1,47 @@
+@import "@styles/vars.module.scss";
+
+$qrCodeSize: clamp(100px, 1vw, 200px);
+$backgroundColor: $accentColor;
+$textColor: $white;
+
+.QRCodePreset{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	//flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	svg{
+		padding: 5px;
+		border: solid 5px $backgroundColor;
+		border-radius: 8%;
+		width: $qrCodeSize;
+	}
+
+	.Tooltip{
+		background-color: $backgroundColor;
+		border: solid 2px $backgroundColor;
+		color: $textColor;
+		font-size: $clampSmall;
+		padding: 0.5em 1em;
+		border-radius: 0.65em;
+		margin-left: 1em;
+		position: relative;
+		width: calc(100% - #{$qrCodeSize});
+
+		$arrowSize: 0.5em;
+		&[data-placement="right"]::before{
+			content: "";
+			position: absolute;
+			left: calc(-1 * #{$arrowSize});
+			top: 50%;
+			transform: translate(0%, -50%);
+			width: 0px;
+			height: 0px;
+			border-top: $arrowSize solid transparent;
+			border-bottom: $arrowSize solid transparent;
+			border-right: $arrowSize solid $backgroundColor;
+		}
+	}
+	
+}

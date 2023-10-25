@@ -1,0 +1,80 @@
+@import "@styles/vars.module.scss";
+
+$fixedWidth: clamp(250px, 20vw,360px);
+
+.outer{
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transition: $transitionMedium;
+  height: 100vh;
+  
+}
+
+.main{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  //z-index:  $zIndexMedium;
+  overflow: hidden;
+  .mainContent{
+    width:calc(100% - #{$fixedWidth});
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   // z-index:  101;
+    //overflow: hidden;
+  }
+}
+
+.rightSidebar{
+  //border: solid $borderWidth $black;
+  background-color: $grey_1;
+  width: $fixedWidth;
+  height: 100%;
+  //padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  //z-index:  $zIndexMedium;
+  
+}
+
+/*.header {
+  width:  100%;
+  //height: 10%;
+  //border: solid $borderWidth $black;
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+.logo{
+  padding:  5px;
+  margin-right: 35px;
+}*/
+
+.backToHome {
+  margin: 3rem 0 0;
+}
+
+.footer{
+  width:  100%;
+  height: 5%;
+  padding: 2em;
+  position: relative;
+  //border: solid $borderWidth $black;
+  border-top: 0;
+  font-size: $fontSizeDetail;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

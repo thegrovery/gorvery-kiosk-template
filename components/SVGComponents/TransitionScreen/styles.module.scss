@@ -1,0 +1,86 @@
+@import "@styles/vars.module.scss";
+
+.TransitionScreen{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	//width: calc(100% - clamp(250px, 20vw, 360px));
+	z-index: 10;
+
+	img{
+		transition: $transitionSlow;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 1500px;
+		height: auto;
+		opacity: 0;
+	}
+	
+	svg{
+		transition: $transitionSlow;
+		transform-box: view-box;
+		opacity: 0;
+	}
+	//
+}
+
+/* ===== Enrollment Pages ===== */
+	.Screen1{
+		height: 100%;
+		width: 100%;
+		background-color: $cream2;
+	}
+	.Screen2{
+		height: 100%;
+		width: 100%;
+		background-color: $cream2;
+	}
+	.Screen3{
+		height: 100%;
+		width: 100%;
+		background-color: $cream2;
+	}
+
+/* ===== Access Pages ===== */
+	.Screen4{
+		height: 100%;
+		width: 100%;
+		background-color: $cream3;
+	}
+	.Screen5{
+		height: 100%;
+		width: 100%;
+		background-color: $cream3;
+	}
+	.Screen6{
+		height: 100%;
+		width: 100%;
+		background-color: $cream3;
+	}
+
+/* ===== Financial Pages ===== */
+	.Screen7{
+		height: 100%;
+		width: 100%;
+		background-color: $lightBlue;
+	}
+	.Screen8{
+		height: 100%;
+		width: 100%;
+		background-color: $lightBlue;
+	}
+
+	/* ===== Financial Pages ===== */
+		.Screen9{
+			height: 100%;
+			width: 100%;
+			background-color: $lightBlue;
+		}
+		.Screen10{
+			height: 100%;
+			width: 100%;
+			background-color: $lightBlue;
+		}

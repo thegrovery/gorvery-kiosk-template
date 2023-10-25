@@ -1,0 +1,34 @@
+@import "@styles/vars.module.scss";
+
+.DoorBG{
+	height: 100%;
+	svg{
+		height: 100%;
+		width: auto;
+	}
+}
+
+.EnrollmentDoors{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	//z-index: 50;
+	svg{
+		position: fixed;
+		bottom: 50px;
+		left: 0%;
+		width: auto;
+		height: 100%;
+		/*@media screen and (min-width: 2400px) {
+			width: 100%;
+			height: auto;
+		}*/
+		g[data-door]{
+			&[data-active="active"]{
+				transform: perspective(1200px) translate3D(0,0,0) rotateY(90deg);
+			}
+		}
+		
+	}
+}

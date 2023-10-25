@@ -1,0 +1,146 @@
+@import "@styles/vars.module.scss";
+
+/* Top level slider  */
+.Slider{
+	padding: 0px 75px 50px;
+	//border: 5px solid $red;
+	overflow: hidden;
+	//z-index: -1;
+
+	.SlideOutter{
+		width: 100%;
+		min-height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: visible;
+		position: relative;
+		//z-index: 100;
+
+		//border: 5px solid $red;
+	}
+
+	.SlideInner{
+		width: 100%;
+		width:66vw;
+		height: 66vh;
+		//padding: 35px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		//border: 5px solid $red;
+	}
+}
+
+
+
+/* Individual slides */
+.SwiperSlide{
+	width: 100%;
+	height: 100%;
+	//aspect-ratio: 16/8;
+	overflow: hidden;
+	//max-width: 550px;
+	background: $grey_1;
+	//padding: 35px;
+	//box-shadow: $niceShadowShort;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: solid $borderWidth $black;
+	padding: $clampMedium;
+
+	.content{
+		height: 100%;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		padding: $clampMedium;
+		border-right:solid $borderWidth $black; 
+
+		.inner{
+			border:dashed $borderWidth $black;
+		}
+	}
+
+	.image{
+		width: 75%;
+		padding: 15px;
+	}
+
+	.copy{
+		//width:calc(100% - 300px);
+		padding: 35px 15px 15px;
+
+		.title{
+			font-family: $fontDisplay;
+			font-size: $fontSizeSubhead;
+			margin-bottom: 10px;
+
+			/*&:after{
+				content:" ";
+				display: block;
+				width: 100%;
+				//max-width: 100px;
+				border-bottom:solid 2px $black;
+			}*/
+		}
+
+		.body{
+			font-family: $fontBody;
+			font-size: $fontSizeBody;
+			margin-bottom: 15px;
+			width: 100%;
+			aspect-ratio: 2/1;
+			overflow-y: auto;
+			border:dashed $borderWidth $black;
+		}
+	}
+
+	.assets{
+		width: 50%;
+		padding: $clampMedium;
+		padding-right: 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+		height: 100%;
+		overflow-y: auto;
+		
+
+		.inner{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-wrap: wrap;
+			border:dashed $borderWidth $black;
+		}
+	}
+}
+
+.AssetOuter{
+	width: 33.3%;
+	padding: $clampSmall;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.Asset{
+	font-size: $clampExtraSmall;
+	border: solid $borderWidth $black;
+	aspect-ratio: 1/1;
+	width: 100%;
+	//max-width: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}

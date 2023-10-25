@@ -1,0 +1,40 @@
+@import "@styles/vars.module.scss";
+
+$fixedWidth: clamp(250px, 20vw,360px);
+$footerHeight: 3rem;
+
+.DynamicFooter{
+	//border: solid 2px $black;
+	position: absolute;
+	z-index: 30;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	width:calc(100% - #{$fixedWidth});
+	//height: $footerHeight;
+	background-color: $white;
+	box-shadow: 0.1em -0.1em 0.25em rgba($black, 0.15);
+	
+	.inner{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 15px 35px;
+	}
+
+	.text{
+		width:100%;
+		font-size: $clampExtraExtraSmall;
+		text-align: center;
+		.dynamicText{
+			font-size: $clampExtraSmall;
+			width: 100%;
+			max-width: 1000px;
+			margin: auto;
+		}
+	}
+	
+}

@@ -1,0 +1,108 @@
+/*========================================*/
+//	MasterComponent
+//	
+//	Clone this component out to make 
+//	new components.
+//	
+/*========================================*/
+
+/* ================== */
+/* ===== Imports ===== */
+/* ================== */
+	@import "@styles/vars.module.scss";
+
+/* ========================= */
+/* ===== Main Component ===== */
+/* ========================= */
+	.VersionNotice{
+		position: fixed;
+		$offset: 1vw; 
+		left: $offset;
+		bottom: $offset;
+		z-index: 10000;
+	}
+
+/* ===================== */
+/* ===== IconWidget ===== */
+/* ===================== */
+	$border1: solid 1px $black;
+
+	.IconWidget{
+		border: $border1;
+		width: 2rem;
+		aspect-ratio: 1/1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		color: $black;
+		background-color: $white;
+		&:hover{
+			color: $white;
+			background-color: $black;
+		}
+
+		.inner{
+			position: relative;
+			//top: 8%;
+		}
+	}
+
+/* ===================== */
+/* ===== NoticeInfo ===== */
+/* ===================== */
+	.NoticeInfo{
+		border: $border1;
+		display: flex;
+		width: 300px;
+		flex-direction: column;
+		color: $black;
+		background-color: $white;
+		font-size: $clampExtraSmall;
+		padding: 1em;
+		margin-bottom: 1em;
+		transition: $transitionMedium;
+
+		&[data-active="inactive"]{
+			transform: translateX(-350px);
+		}
+		&[data-active="active"]{
+			transform: translateX(0%);
+		}
+
+		.version{
+			.cell{
+				margin-bottom: 0.5em;
+			}
+		}
+		
+		br{
+			height: 1.5em;
+			display: block;
+		}
+		ul{
+			margin: 0;
+			padding-left: 1.5em;
+		}
+		
+	}
+
+
+
+/* ========================= */
+/* ===== Progress Bars ====== */
+/* ========================= */
+	.ProgressBar{
+		width: 100%;
+		height: 15px;
+		padding: 1px;
+		background-color: $white;
+		border: $border1;
+
+
+		.progress{
+			height: 100%;
+			background-color: $black;
+			//width: 33%;
+		}
+	}

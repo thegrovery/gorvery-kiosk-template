@@ -1,0 +1,24 @@
+@import "@styles/vars.module.scss";
+
+.HeroSection{
+	position: relative;
+	width: 100%;
+	height:clamp(320px, 25vw, 500px);
+	padding: 35px 0;
+	margin-bottom: 80px;
+	display: flex;
+ 	align-items: center;
+	justify-content: flex-start;
+	background-size: cover;
+	background-position: center;
+}
+
+.filter{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	//z-index: 2;
+	background-color:rgba($white, 0.5);
+}

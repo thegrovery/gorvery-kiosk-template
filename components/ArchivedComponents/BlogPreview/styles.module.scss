@@ -1,0 +1,46 @@
+@import "@styles/vars.module.scss";
+
+.BlogPreview{
+	margin-bottom: 50px;
+	padding-bottom: 50px;
+	border-bottom: solid 2px $black;
+	.image{
+		background-color: $grey_1;
+		margin-bottom: 15px;
+		//max-height: 400px;
+		a{
+			display: block;
+			width: 100%; 
+			display: flex;
+			justify-self: center;
+			align-items: center;
+			//max-width: 400px;
+			//margin: auto;
+			img{
+				
+			}
+		}
+	}
+
+	.title{
+		display: block;
+		margin-bottom: 0px;
+		font-size: $clampLarge;
+		line-height: 1.2
+	}
+	.previewText{
+		font-size: $clampMedium;
+	}
+	.readMore{
+		margin: 0.75em 0 0.5em;
+	}
+	.postMetas{
+		margin-bottom: 0.5em;
+	}
+	.author{
+		font-size: $clampSmall;
+	}
+	.date{
+		font-size: $clampSmall;
+	}
+}

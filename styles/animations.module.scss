@@ -1,0 +1,126 @@
+/*========================================*/
+//	ANIMATIONS.MODULE.SCSS
+//	
+//	Put your notes here.
+//	
+/*========================================*/
+@import "@styles/vars.module.scss";
+
+/* ================= */
+/* ===== Clouds ===== */
+/* ================= */
+	.animateCloud1{
+		opacity: 0;
+		animation: 30s linear cloudMove infinite;
+	}
+	.animateCloud2{
+		opacity: 0;
+		animation: 35s linear cloudMove infinite;
+	}
+
+	@keyframes cloudMove {
+	  0% {
+	    transform: translate3d(0%, 0px, 0px);
+	    opacity: 0;
+	  }
+	  5%{
+	  	opacity: 1;
+	  }
+	  
+	  95% {
+	    transform: translate3d(-95%, 0px, 0px);
+	    opacity: 1;
+	  }
+	  100% {
+	    transform: translate3d(-100%, 0px, 0px);
+	    opacity: 0;
+	  }
+	}
+
+
+/* ================ */
+/* ===== Trees ===== */
+/* ================ */
+	.animateTree1{
+		animation: 5s linear treeMove infinite;
+		transform-origin: bottom;
+	}
+	.animateTree2{
+		animation: 5s linear treeMove infinite;
+		animation-delay: 1s;
+		transform-origin: bottom;
+	}
+	
+	@keyframes treeMove {
+	  0%, 100% {
+	    transform: skew(0deg);
+	  }
+	  25%{
+	  	transform: skew(1.5deg);
+	  }
+	  50% {
+	    transform: skew(-1.5deg);
+	  }
+	  75% {
+	    transform: skew(1.5deg);
+	  }
+	}
+
+
+/* ================== */
+/* ===== Windows ===== */
+/* ================== */
+	$lightColorOn: #00DFC3;
+	$lightColorOff: rgb(233, 225, 224);
+	.animateWindow1-1{
+		fill: $lightColorOff;
+		animation: 10s linear windowLightUp infinite;
+		animation-timing-function: steps(2);
+		transition: 0s;
+		animation-delay: 0s
+	}
+	.animateWindow1-2{
+		fill: $lightColorOff;
+		animation: 10s linear windowLightUp infinite;
+		animation-timing-function: steps(2);
+		transition: 0s;
+		animation-delay: 2s
+	}
+
+	.animateWindow2-1{
+		fill: $lightColorOff;
+		animation: 15s linear windowLightUp infinite;
+		animation-timing-function: steps(2);
+		transition: 0s;
+		animation-delay: 1s
+	}
+	.animateWindow2-2{
+		fill: $lightColorOff;
+		animation: 15s linear windowLightUp infinite;
+		animation-timing-function: steps(2);
+		transition: 0s;
+		animation-delay: 3s
+	}
+
+	.animateWindow3-1{
+		fill: $lightColorOff;
+		animation: 20s linear windowLightUp infinite;
+		animation-timing-function: steps(2);
+		transition: 0s;
+		animation-delay: 2s
+	}
+	.animateWindow3-2{
+		fill: $lightColorOff;
+		animation: 20s linear windowLightUp infinite;
+		animation-timing-function: steps(2);
+		transition: 0s;
+		animation-delay: 4s
+	}
+
+	
+	@keyframes windowLightUp {
+	  0%, 100% {fill: $lightColorOff;}
+	  1%{fill: $lightColorOn;}
+	  75%{fill: $lightColorOn;}
+	  76% {fill: $lightColorOff;}
+	}

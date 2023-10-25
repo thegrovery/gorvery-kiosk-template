@@ -1,0 +1,120 @@
+@import "@styles/vars.module.scss";
+
+.NavMenuWrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: calc(#{$zIndexHigh} + 1);
+	transition:$transitionSlow;
+	opacity: 0;
+	pointer-events: none;
+	//will-change: opacity;
+	&[data-active="active"]{
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.NavMenuBackdrop{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba($black, 0.5);
+	backdrop-filter: blur(4px);
+}
+
+.NavMenuClose{
+	position: absolute;
+	top: 69px;
+	right: 35px;
+	z-index: calc(#{$zIndexHigh} + 15);
+	padding:5px;
+	border: solid 2px $black;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: $transitionMedium;
+
+	.icon{
+		opacity: 1;
+		transition: inherit;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background-color: rgba($white, 0.5);
+		transform: translate3d(-50%, -50%, 0);
+	}
+	.iconHover{
+		opacity: 0;
+		transition: inherit;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	&:hover{
+		background-color: $black;
+		.icon{
+			opacity: 0;
+		}
+		.iconHover{
+			opacity: 1;
+		}
+	}
+}
+
+.NavMenu{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	z-index: calc(#{$zIndexHigh} + 10);
+	pointer-events:none;
+	&[data-active="active"]{
+		pointer-events: auto;
+	}
+	.inner{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+	.links{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba($white, 0.75);
+		text-align: center;
+		max-width: $contentWidthMin;
+		width: calc(100% - 30px);
+		pointer-events: inherit;
+		ul{
+			width: 100%;
+			li{
+				margin-bottom: 0;
+			}
+		}
+		a{
+			color: $black;
+			background-color: transparent;
+			display: block;
+			padding: 0.35em 0 0.55em;
+			font-size: $clampLarge;
+			&:hover{
+				color: $white;
+				background-color: $black;
+			}
+		}
+	}
+	
+}

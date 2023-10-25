@@ -1,0 +1,167 @@
+@import "@styles/vars.module.scss";
+
+.DoorBG{
+	
+	height: 100%;
+	svg{
+		height: 100%;
+		width: auto;
+	}
+}
+
+.doorInnerBlack{
+	fill: $black;
+}
+
+.EnrollmentDoors{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	//z-index: 50;
+	background-color: $cream2;
+	svg{
+		position: fixed;
+		bottom: 50px;
+		left: 0%;
+		width: auto;
+		height: 100%;
+		/*@media screen and (min-width: 2400px) {
+			width: 100%;
+			height: auto;
+		}*/
+		g[data-door]{
+			&[data-active="active"]{
+				transform: perspective(1200px) translate3D(0,0,0) rotateY(90deg);
+			}
+		}		
+	}
+
+	[data-element="lights"]{
+		//transform: translate(0%, 10%);
+		position: absolute;
+		top: 10%;
+	}
+	[data-element="objects"]{
+		transform: translate(5%, 0%);
+		//position: absolute;
+		//left: 5%;
+	}
+	[data-element="doors"]{
+		transform: translate(5%, 0%);
+	}
+}
+
+.AccessDoors{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	background-color: $cream3;
+	//z-index: 50;
+	svg{
+		position: fixed;
+		bottom: 50px;
+		left: 0%;
+		width: auto;
+		height: 100%;
+		/*@media screen and (min-width: 2400px) {
+			width: 100%;
+			height: auto;
+		}*/
+		g[data-door]{
+			&[data-active="active"]{
+				transform: perspective(1200px) translate3D(0,0,0) rotateY(90deg);
+			}
+		}
+		
+	}
+
+	[data-element="lights"]{
+		transform: translate(0%, 5%);
+		//position: absolute;
+		//top: 10%;
+	}
+	[data-element="objects"]{
+		transform: translate(5%, 0%);
+	}
+	[data-element="doors"]{
+		transform: translate(5%, 0%);
+	}
+}
+
+.FinancialDoors{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	background-color: $lightBlue;
+	//z-index: 50;
+	svg{
+		position: fixed;
+		bottom: 50px;
+		left: 0%;
+		width: auto;
+		height: 100%;
+		/*@media screen and (min-width: 2400px) {
+			width: 100%;
+			height: auto;
+		}*/
+		g[data-door]{
+			&[data-active="active"]{
+				transform: perspective(1200px) translate3D(0,0,0) rotateY(90deg);
+			}
+		}
+
+		[data-element="lights"]{
+			transform: translate(0%, 5%);
+			//position: absolute;
+			//top: 10%;
+		}
+		[data-element="objects"]{
+			transform: translate(5%, 0%);
+		}
+		[data-element="doors"]{
+			transform: translate(5%, 0%);
+		}
+		
+	}
+}
+
+.ResourceDoors{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	background-color: $lightGreen;
+	//z-index: 50;
+	svg{
+		position: fixed;
+		bottom: 50px;
+		left: 0px;
+		width: auto;
+		height: 100%;
+		/*@media screen and (min-width: 2400px) {
+			width: 100%;
+			height: auto;
+		}*/
+		g[data-door]{
+			&[data-active="active"]{
+				transform: perspective(1200px) translate3D(0,0,0) rotateY(90deg);
+			}
+		}
+		
+	}
+
+	[data-element="lights"]{
+		transform: translate(0%, 5%);
+		//position: absolute;
+		//top: 10%;
+	}
+	[data-element="objects"]{
+		transform: translate(8%, 0%);
+	}
+	[data-element="doors"]{
+		transform: translate(8%, 0%);
+	}
+}

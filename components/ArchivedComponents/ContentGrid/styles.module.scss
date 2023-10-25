@@ -1,0 +1,40 @@
+@import "@styles/vars.module.scss";
+
+.ContentGrid{
+	/*display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;*/
+	border-top: solid $borderWidth $primaryColor;
+	border-left: solid $borderWidth $primaryColor;
+
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+	}
+
+	.div1 { grid-area: 1 / 1 / 7 / 2; }
+	.div2 { grid-area: 1 / 2 / 3 / 4; }
+	.div3 { grid-area: 3 / 2 / 5 / 4; }
+	.div4 { grid-area: 5 / 2 / 7 / 4; }
+	.div5 { grid-area: 1 / 4 / 3 / 6; }
+	.div6 { grid-area: 3 / 4 / 5 / 6; }
+	.div7 { grid-area: 5 / 4 / 7 / 6; }
+}
+
+.Cell{
+	position: relative;
+	border-bottom: solid $borderWidth $primaryColor;
+	border-right: solid $borderWidth $primaryColor;
+	padding: 35px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	//width: 25%;
+	height:100%;
+}

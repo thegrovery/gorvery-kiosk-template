@@ -1,0 +1,25 @@
+@import "@styles/vars.module.scss";
+
+.FullScreenWidget{
+	position: fixed;
+	z-index: 10000;
+	bottom:0;
+	left: 50%;
+	transform: translate(-50%, 0px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $grey_1;
+	padding: $clampMedium;
+	box-shadow: $simpleShadow;
+
+	&[data-active="active"]{
+		opacity: 0;
+		pointer-events: none;
+	}
+	&[data-active="inactive"]{
+		opacity: 1;
+		pointer-events: auto;
+	}
+}

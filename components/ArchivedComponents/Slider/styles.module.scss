@@ -1,0 +1,78 @@
+@import "@styles/vars.module.scss";
+
+/* Top level slider  */
+.Slider{
+	padding: 75px 75px;
+	//border: 5px solid $red;
+	overflow: hidden;
+
+	.SlideOutter{
+		width: 100%;
+		min-height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		//overflow: visible;
+		position: relative;
+		z-index: 100;
+
+		//border: 5px solid $red;
+	}
+
+	.SlideInner{
+		width: 100%;
+		max-width: 850px;
+		//padding: 35px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		//border: 5px solid $red;
+	}
+}
+
+
+
+/* Individual slides */
+.SwiperSlide{
+	width: 100%;
+	//max-width: 550px;
+	background: $grey_1;
+	//padding: 35px;
+	//box-shadow: $niceShadowShort;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	//border: 5px solid $red;
+
+	.image{
+		width: 100%;
+		max-width: 300px;
+		padding: 15px;
+	}
+
+	.copy{
+		width:calc(100% - 300px);
+		padding: 35px 15px 15px;
+
+		.title{
+			font-family: $fontDisplay;
+			font-size: $fontSizeSubhead;
+			margin-bottom: 10px;
+
+			/*&:after{
+				content:" ";
+				display: block;
+				width: 100%;
+				//max-width: 100px;
+				border-bottom:solid 2px $black;
+			}*/
+		}
+
+		.body{
+			font-family: $fontBody;
+			font-size: $fontSizeBody;
+		}
+	}
+}

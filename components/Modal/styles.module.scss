@@ -1,0 +1,308 @@
+@import "@styles/vars.module.scss";
+
+$backdropColor: rgba($black, 0.25);
+
+.ModalWrapper{
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	height: 100%;
+	width: 100%;
+	z-index: 10000;
+	transition: $transitionMedium;
+
+	/* ===== Modal State ===== */
+		&[data-modal-status="inactive"]{
+			opacity: 0%;
+			pointer-events: none;
+
+			.modalInner{
+				transform: translate(-50%, -40%);
+			}
+		}
+		&[data-modal-status="active"]{
+			opacity: 100%;
+			pointer-events: auto;
+		}
+
+	/* ===== Modal Selection ===== */
+		.PDFModal,
+		.VideoModal,
+		.SupportModal,
+		.InactivityModal{
+			display: none;
+		}
+		&[data-modal-show="PDFModal"]{
+			.PDFModal{
+				display: block;
+			}
+		}
+		&[data-modal-show="VideoModal"]{
+			.VideoModal{
+				display: block;
+			}
+		}
+		&[data-modal-show="SupportModal"]{
+			.SupportModal{
+				display: block;
+			}
+		}
+		&[data-modal-show="InactivityModal"]{
+			.InactivityModal{
+				display: block;
+			}
+		}
+	//end
+}
+
+.backdrop{
+	background-color: $backdropColor;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+.modalInner{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 75%;
+	min-width: 1000px;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: $transitionMedium;
+}
+
+.PDFModal{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: $white;
+	border-radius: 3px;
+	padding: 2.25rem $clampLarge 0;
+
+	.closeButton{
+		position: absolute;
+		top: $clampSmall;
+		right: $clampSmall;
+		width: $clampSmall;
+		aspect-ratio: 1/1;
+		cursor: pointer;
+	}
+	
+	.iframeWrapper{
+		width: 100%;
+		aspect-ratio: 18/9;
+	}
+	iframe{
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		margin-bottom: calc(-1 * #{$clampMedium});
+	}
+
+	.titleArea{
+		text-align: center;
+		padding: $clampSmall;
+		font-size: $clampSmall;
+		color: $red;
+	}
+
+	.copyArea{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		max-width:50vw;
+		margin: auto;
+		padding: $clampSmall;
+		font-size: $clampExtraSmall;
+	}
+}
+
+.SupportModal{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: $white;
+	padding: $clampLarge $clampExtraLarge;
+	border-radius: 3px;
+	.scroll{
+		overflow-y: auto;
+		max-height: 85vh;
+		padding: $clampMedium;
+	}
+
+	.closeButton{
+		position: absolute;
+		top: $clampSmall;
+		right: $clampSmall;
+		width: $clampSmall;
+		aspect-ratio: 1/1;
+		cursor: pointer;
+	}
+
+	/*Modal Heading*/
+	.heading{
+		text-align: center;
+		display: block;
+		width: 100%;
+		max-width: 1200px;
+		margin: auto;
+		margin-bottom: $clampLarge;
+		h2{
+			font-size: $clampLarge;
+			margin-bottom: $clampSmall;
+		}
+		p{
+			font-size: $clampSmall;
+		}
+	}
+
+	/*Body Section - Columns*/
+	.body{
+		display: flex;
+		flex-direction: row;
+		//flex-wrap: wrap;
+		justify-content: center;
+		//align-items: flex-start;
+		gap: 3.33%;
+		//font-size: $clampSmall;
+		line-height: 1.35;
+
+		.column{
+			width: 30%;
+			padding: $clampMedium;
+			background-color: $grey;
+			border-radius: 5%;
+			.columnHeading{
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: $clampSmall;
+				.icon{
+					font-size: $clampLarge;
+					margin-bottom: $clampSmall;
+				}
+				.hTag{
+					font-size: $clampMedium;
+				}
+			}
+			.columnBody{
+				font-size: $clampSmall;
+				ul{
+					list-style: none;
+					padding: 0;;
+				}
+				li{
+					margin-bottom: 0.65em;
+					display: flex;
+					justify-content: flex-start;
+					align-items: flex-start;
+					&:before {
+						content:'•';
+					  	color: $accentColor;
+					  	font-size: 2.5em;
+					  	position: relative;
+					  	top: -0.5em;
+					  	margin-right: 5px;
+					}
+				}
+			}
+			.columnFooter{
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+
+				h4{
+					font-size: $clampSmall;
+				}
+				.qrCode{
+					margin-top: $clampMedium;
+				}
+			}
+		}
+	}
+
+	.qrCode{
+		display: flex;
+		justify-content: center;
+		padding: $clampLarge 0;
+		width: 100%;
+		max-width: 600px;
+		margin: auto;
+	}
+
+	.modalFooter{
+		border-top: solid 2px $accentColor;
+		padding-top: 1em;
+		font-size: $clampSmall;
+		text-align: center;
+		h5{
+			font-size: inherit;
+			width: 100%;
+			max-width: 1000px;
+			margin: auto;
+		}
+		p{
+			font-size: $clampExtraSmall;
+			width: 100%;
+			max-width: 1000px;
+			margin: auto;
+			margin-top: $clampMedium;
+		}
+	}
+}
+
+.InactivityModal{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: $white;
+	padding: 0 $clampLarge;
+
+	.closeButton{
+		position: absolute;
+		top: $clampSmall;
+		right: $clampSmall;
+		width: $clampSmall;
+		aspect-ratio: 1/1;
+		cursor: pointer;
+	}
+
+	.titleArea{
+		text-align: center;
+		padding: $clampSmall;
+		font-size: $clampSmall;
+	}
+
+	.copyArea{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		max-width:50vw;
+		margin: auto;
+		padding: $clampSmall;
+		font-size: $clampSmall;
+	}
+
+	.buttonArea{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		max-width:50vw;
+		margin: auto;
+		padding: $clampSmall;
+		font-size: $clampExtraSmall;
+	}
+}

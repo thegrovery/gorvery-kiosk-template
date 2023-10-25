@@ -1,0 +1,6 @@
+{
+  "heroImage": "/images/hm-hero-img.jpg",
+  "h1Title": "About Me", 
+  "bodyContent1": "Hi there! I'm a frontend developer who specializes in making templates and tools that are powerful while also being easy to use.  ",
+  "bodyContent2": "This page is using data imported from 'pageAbout.json'.  You should use this pattern for handling any variable-powered page content.  This will allow you to edit this page from a more central location using plain text.  You're not limited to just adding content in this way - feel free to mix regular content and JSON content on your pages.  This is just here as an option to make things easier."
+}

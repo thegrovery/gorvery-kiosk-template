@@ -1,0 +1,56 @@
+@import "@styles/vars.module.scss";
+
+.SmallScreenWarning{
+	
+	position: fixed;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: $zIndexMax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+
+	&:before{
+		content: '';
+		background-color: $grey_1;
+		background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba($grey_2,.5) 35px, rgba($grey_2,.5) 70px);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 500%;
+		//animation:scroll 5s infinite linear;
+	}
+
+	@media screen and (max-aspect-ratio: 4/3), (max-width: 1000px) {
+		opacity: 1;
+		pointer-events: auto;
+		visibility: visible;
+	}
+
+	.content{
+		font-size: $fontSizeBody;
+		background-color: $white;
+		padding: 1em;
+		text-align: center;
+
+		img{
+			margin: 0 auto 1em;
+		}
+	}
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-30%, 0px, 0px);
+  }
+}
