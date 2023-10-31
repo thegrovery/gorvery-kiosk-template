@@ -73,7 +73,7 @@ export default function Post({ postData }) {
       <div className={pageStyles.pageLayout}>
         {/*Header*/}
         <DynamicHeader
-          heading={["Using the My BMS Cases ", <strong>Provider Portal</strong>]}
+          heading={["Section 1, ", <strong>Page 3</strong>]}
         />
 
         {/*Content*/}
@@ -88,22 +88,22 @@ export default function Post({ postData }) {
                 <div className={pageStyles.cell}>
                   
                   <BlockQuote icon="/images/icons/contentComputerScreen.svg">
-                    <p>This secure provider portal offers convenient, on-demand access to patient reimbursement cases for BMS medications.</p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </p>
                   </BlockQuote>
 
-                  <h2>The provider portal allows you to: </h2>
+                  <h2>Lorem ipsum dolor sit amet</h2>
                   <ul>
-                    <li>Access case status updates </li>
-                    <li>Enroll in co-pay program and view details, including eligibility dates, annual benefit cap, and available balance</li>
-                    <li>Submit and track reverification status </li>
-                    <li>Use e-signature for simplified processing </li>
-                    <li>Securely message your regional Patient Access Specialist</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
                   </ul>
                   <br/>
                   <div className={pageStyles.centeredRow}>
                     <QRCodePreset 
                       link="https://www.mybmscases.com/bmsProviderLightningPortal/s/login/?ec=302&startURL=%2FbmsProviderLightningPortal%2Fs%2F%29%5D&utm_source=bms_congress_access_app&utm_medium=qr_code_scan&utm_campaign=congress_access_event"
-                      toolTipText="Scan to visit Provider Portal"
+                      toolTipText="Scan to Lorem Ipsum"
                       toolTipPlacement="right"
                     />
                   </div>
@@ -112,7 +112,7 @@ export default function Post({ postData }) {
 
                 {/*RIGHT CELL*/}
                 <div className={pageStyles.cell} data-centered>
-                  <img src="/images/content/provider-portal-img.png" alt="" />
+                  <img src="https://placehold.co/400x600" alt="" />
                 </div>
 
               </div>

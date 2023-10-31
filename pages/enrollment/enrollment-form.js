@@ -72,7 +72,7 @@ export default function Post({ postData }) {
       <div className={pageStyles.pageLayout}>
         {/*Header*/}
         <DynamicHeader
-          heading={title}
+          heading={["Section 1, ", <strong>Page 2</strong>]}
         />
 
         {/*Content*/}
@@ -84,7 +84,9 @@ export default function Post({ postData }) {
 
               <div className={pageStyles.oneColumn}>                  
                   <BlockQuote icon="/images/icons/contentFormIcon.svg">
-                    <p>Accurately complete the enrollment form, including the Patient Authorization and Agreement (PAA), to prevent processing delays.</p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
                   </BlockQuote>
 
                   <img src="/images/content/EnrollmentFormContentImage-1.png" alt="" />
@@ -95,7 +97,7 @@ export default function Post({ postData }) {
                   <div className={pageStyles.centeredRow}>
                     <QRCodePreset 
                       link="https://www.bmsaccesssupport.bmscustomerconnect.com/sign?utm_source=bms_congress_access_app&utm_medium=qr_code_scan&utm_campaign=congress_access_event"
-                      toolTipText="Scan for patient e-signature"
+                      toolTipText="Lorem ipsum dolor sit amet"
                       toolTipPlacement="right"
                     />
                   </div>

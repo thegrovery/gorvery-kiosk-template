@@ -37,7 +37,7 @@ export default function DragDrop({
           animation="fadeInUp"
           animationDelay="1"
           tooltipID="lvl-1-card-instructions"
-          tooltipText={[<h2>Begin Getting Access!</h2> , <p>Tap to drag an access card to the scanner on the right to learn more about each topic.</p>]}
+          tooltipText={[<h2>Tooltip Title</h2> , <p>Tap to drag an access card to the scanner on the right to learn more about each topic.</p>]}
           tooltipPlacement="up"
         />
 
