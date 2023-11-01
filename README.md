@@ -1,75 +1,112 @@
-# README #
+# README
 
-## Project-Specific Notes ##
-* Project-specific notes go here.
+## Project-Specific Notes
+Project-specific notes go here.
 
-### Code Libraries ###
-* Drag and Drop library: https://interactjs.io/
-* Browser/Device detection: https://www.npmjs.com/package/react-device-detect
+### User Flow
+- Level 1 | Index Page -> Drag card onto lvl-1 door
+- Level 2 | Category Pages -> Drag card onto lvl-2 door
+- Level 3 | Content Pages -> View content, return to previous page or index page
 
+### Site Map
+- Access
+	+ Appeals
+	+ Benefits
+	+ Billing
+- Enrollment
+	+ Enrollment Form
+	+ Options
+	+ Provider Portal
+- Financial
+	+ Commerical Patients
+	+ Government/Uninsured Patients
+- Reources
+	+ Brochures
+	+ Videos
 
-### Server Links ###
-* Local: http://localhost:3000/
-* Staging: https://bms-kiosk-staging.netlify.app/
-* Live: 
+### Project Links
+- Local: http://localhost:3000/
+- Staging: https://grovery-kiosk-template.netlify.app/
+- Live: https://grovery-kiosk-template.netlify.app/
+
+### Third Party Service Links
+- [HubSpot Form](https://app.hubspot.com/submissions/39959608/form/c7e1d1d5-1b8c-499c-a187-b0b816215139/performance)
+- [Netlify Dashboard](https://app.netlify.com/sites/grovery-kiosk-template/overview)
 
 ---
 
-## BMS ACCESS SUPPORT EXPERIENCE ##
+## Grovery Kiosk Experience Template
 
+### Main Features
+- Fullscreen-style layout
+- SVG backgrounds, animations, UI assets
+- Smooth page transitions, animated transition screens
+- Touch-centric, drap-and-drop UI
+- Inactivity Timer
 
-### Best Practices ###
-* Use lots of comments and documentation
-* Keep your tabs lined up correctly
-* Follow HTML5 element heirarchy
-* Double check your title tags and favicon
-* Store your local project in a regular folder with no cloud syncing - this can cause issues with running/building the project
+### Best Practices
+- Use lots of comments and documentation
+- Keep your tabs lined up correctly
+- Follow HTML5 element heirarchy
+- Double check your title tags and favicon
+- Store your local project in a regular folder with no cloud syncing - this can cause issues with running/building the project
 
-### Initialize ###
-* Use Node v16.13.0 - you can just run "npm run nvm" to set
-* run 'npm install'
-* run 'npm run dev' (start and serve commands are the same as this by default, customize them if you need to)
+### Initialize
+- Use Node v16.13.0 - you can run "npm run nvm" to set
+- run 'npm install'
+- run 'npm run dev' (start and serve commands are the same as this by default, customize them if you need to)
 
-### Initial Server Deploy ###
+### Initial Server Deploy
+- Add `NETLIFY_NEXT_PLUGIN_SKIP` var to Netlify vars and set to `true`.
+- Base Directory: `/`
+- Publish Directory: `/out`
 
+### Update Test/Staging Server
+This project uses Netlify's auto-deploy functions.  Every time you push to your main branch, Netlify will do a new deploy. 
 
-### Update Test/Staging Server ###
-This site uses Netlify's auto-deploy functions.  Every time you push to your main branch, Netlify will do a new deploy.
+This project uses a `main` branch and a `staging` branch.  All updates should be first pushed to staging to be tested, and then pushed to main when fully vetted.  Main should ideally only ever be updated by merging/PR'ing from staging, and never directly from a regular branch.
 
-### Form Configuration ###
+### Branch Naming Conventions
+New branches should use the following naming convention: `category--specific-name`.  This makes it easier to read/search branch names, and makes the purpose of the branch clear.  Note: git disallows spaces in branch names and uses dashes instead; therefore the double dash `--` acts as a deliniator for the category name.
 
+Example branch names:
+- `feature--form-popup`
+- `page--about`
+- `content--new-logos`
+- `fix--build-fixes`
+- `component--LoadingScreen`
 
-#### Page Links ####
-* http://localhost:3000/ - Index/Home
-* http://localhost:3000/posts - Blog posts directory
-* http://localhost:3000/posts/master-post - Post master template
-* http://localhost:3000/events - This is a clone of the blog pages and functionality, and can be renamed to whatever you need, or just ignored/removed.
+### Update Procedure
+When making a new update, your chain of events should look like this:
+Make new branch based off `main` -> make updates to code -> re-pull latest from `main` and `staging` to prevent merge errors -> pull request into `staging`, test, confirm merge -> pull request `staging` into `main` when sprint/update batch is ready.
 
+### Form Configuration
+Template uses HubSpot forms.  Be sure to clone a new form and update the form in your project's code.  Be sure to update the form link at the top of this doc as well.
 
-### Assets Checklist ###
-When you start the project, check in with the projects's Analyst for the following:
-* Font files
-* Logo(s) - as PNGs
-* Favicon - you can usually resize the logo for this
-* Figma/PSD of the design to export individual assets
-* Legal copy/links
-* Social links
+#### Sample HubSpot form code:
+``` html
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "39959608",
+    formId: "c7e1d1d5-1b8c-499c-a187-b0b816215139"
+  });
+</script>
+```
 
-### Plugin/Library Links ###
-* [react-icons](https://react-icons.github.io/react-icons)
-* [swiper](https://swiperjs.com/)
-* [normalize.css](https://necolas.github.io/normalize.css/)
-* [react-headroom](https://kyleamathews.github.io/react-headroom/)
-* [tippy.js](https://atomiks.github.io/tippyjs/)
+### Assets Checklist
+When you start the project, check in with the projects's manager for the following:
+- Font files
+- Logo(s) - as PNGs or SVGs
+- Favicon - you can usually resize the logo for this
+- Xd/Figma/PSD of the design to export individual assets
+- Legal copy/links
+- Social links
 
-### Coming Features ###
-* Contact page
-* About page - == In Progress ==
-* [Arbitrary JSON data usage](https://vercel.com/guides/loading-static-file-nextjs-api-route) - == Complete ==
-* [Category and tag filtering on blog pages](https://retool.com/blog/filtering-data-in-react-filter-map-and-for-loops/)
-* lodash - js utility library
-* browsersync - sync multiple browser windows
-* Form integration - netlify forms
-
-### Article Links ###
-* [Set up Google Analytics with react-ga](https://medium.com/@cooperwfloyd/the-most-simple-way-to-track-next-js-page-views-in-google-analytics-8a5c6d981f43)
+### Plugin/Library Links
+- Drag and Drop library: https://interactjs.io/
+- Browser/Device detection: https://www.npmjs.com/package/react-device-detect
+- [react-icons](https://react-icons.github.io/react-icons)
+- [swiper](https://swiperjs.com/)
+- [normalize.css](https://necolas.github.io/normalize.css/)
