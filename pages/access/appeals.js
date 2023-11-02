@@ -78,7 +78,7 @@ export default function Post({ postData }) {
       <div className={pageStyles.pageLayout}>
         {/*Header*/}
         <DynamicHeader
-          heading={["Prior Authorization & Appeals Support"]}
+          heading={["Section 2, ", <strong>Page 2</strong>]}
         />
 
         {/*Content*/}
@@ -94,30 +94,28 @@ export default function Post({ postData }) {
                   
                   <BlockQuote icon="/images/icons/contentListIcon.svg">
                   {/*<h2>Prior Authorization (PA)</h2>*/}
-                  <h2>If required in the Benefits Review, our team can:</h2>
+                  <h2>Lorem ipsum dolor sit amet</h2>
                   <ul>
-                    <li>Help obtain plan-specific PA forms and understand PA requirements </li>
-                    <li>Track PAs and follow up with payer</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                   </ul>
                   </BlockQuote>
 
-                  <h2>Or you can obtain payer requirement information through the BMS Access Payer Map at BMSAccessMap.com:</h2>
+                  <h2>Lorem ipsum dolor sit amet</h2>
                   <ul>
-                    <li>Get on-demand access to coverage policies and formulary status for select BMS medications within local health plans</li>
-                    <li>View utilization management criteria, including Prior Authorization and documentation requirements, diagnostic testing information, etc.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                   </ul>
 
                   <BlockQuote icon="/images/icons/contentClipboardIcon.svg">
                     <h2>Appeals Support </h2>
-                    <p>Get helpful information, forms, and other resources regarding the appeals process, including:</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <ul>
-                      <li>Medical necessity letter template and checklist</li>
-                      <li>Claim denial letters template</li>
-                      <li>Appeals letter template</li>
-                      <li>CMS forms and documents</li>
-                      <li>
-                        <a href="/enrollment/provider-portal">Tap to learn more about the provider portal</a>
-                      </li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                     </ul>
                   </BlockQuote>
                   
@@ -127,8 +125,8 @@ export default function Post({ postData }) {
 
                 {/*RIGHT CELL*/}
                 <div className={pageStyles.cell} data-centered>
-                  <img src="/images/content/appeals-img.png" alt="" />
-                  <p>To access the BMS Access Payer Map, scan the QR code below and select the appropriate medication.</p>
+                  <img src="https://placehold.co/400x400" alt="" />
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <QRCodePreset 
                     link="https://www.bmsaccessmap.com/opdivo?utm_source=bms_congress_access_app&utm_medium=qr_code_scan&utm_campaign=congress_access_event"
                     toolTipText="Scan to visit BMS Access Payer Map"
@@ -137,7 +135,7 @@ export default function Post({ postData }) {
 
                   <br/><br/>
 
-                  <img src="/images/content/pa-appeals-supporting.png" alt="" />
+                  <img src="https://placehold.co/400x200" alt="" />
                   <QRCodePreset 
                     link="https://www.bmsaccesssupport.bmscustomerconnect.com/forms-resources?utm_source=bms_congress_access_app&utm_medium=qr_code_scan&utm_campaign=congress_access_event"
                     toolTipText="Scan for PA &amp; Appeals Forms &amp; Resources"
