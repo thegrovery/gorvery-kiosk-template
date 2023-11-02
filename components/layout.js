@@ -474,8 +474,11 @@ export default function Layout({
       {/*<FullScreenWidget/>*/}
       {/*<SupportModal/>*/}
       <Modal/>
-      <IdleTimer/>
       
+      {process.env.FEATURE_INACTIVITY_TIMER == true &&
+        <IdleTimer/>
+      }
+            
       {/* MAIN SECTION */}
       <main className={styles.main}>
         
