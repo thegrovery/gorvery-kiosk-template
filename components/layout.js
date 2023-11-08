@@ -5,6 +5,7 @@
   import { router } from 'next/router'
   import Link from 'next/link'
   import data from "@data/data.json"
+  import featureControlData from "@data/featureControl.json"
   import $ from 'jquery'
 
 /*===== Theme Components =====*/
@@ -27,6 +28,7 @@
 /*===== Data Vars =====*/
   export const siteTitle = 'BMS Congress Access Support'
   export const siteData = data
+  export const featureControl = featureControlData
 
 export default function Layout({ 
   //PROPS
@@ -474,25 +476,14 @@ export default function Layout({
       {/*<FullScreenWidget/>*/}
       {/*<SupportModal/>*/}
       <Modal/>
-      
-      {process.env.FEATURE_INACTIVITY_TIMER == true &&
+
+      {featureControl.inactivityTimer == 'true' &&
         <IdleTimer/>
       }
             
       {/* MAIN SECTION */}
       <main className={styles.main}>
-        
-          {/* BREADCRUMBS */}
-          {/*{!home && (
-            <Container>
-              <div className={styles.backToHome}>
-                <Link href="/">
-                  <a>← Back to home</a>
-                </Link>
-              </div>
-            </Container>
-          )}*/}
-          
+              
           <div id="mainContent" className={styles.mainContent}>
             {children}
           </div>
@@ -516,21 +507,25 @@ export default function Layout({
         <Footer/>
       </section>*/}
       
-      {/* VERSION NOTICE */}
-      {/*<VersionNotice
-        projectName="Kiosk Template"
-        versionNumber="0.9.1"
-        updatePercentComplete="50%"
-        totalPercentComplete="91%"
-      >
-        <ul>
-          <li>Previous Update - BMS project finalization</li>
-          <li>Latest Update - Template creation</li>
-          <li>Next Update - Placeholder Content & Data files</li>
-        </ul>
-      </VersionNotice>*/}
+      {featureControl.versionNotice == 'true' &&
+        <VersionNotice
+          projectName="Kiosk Template"
+          versionNumber="0.7.1"
+          updatePercentComplete="50%"
+          totalPercentComplete="75%"
+        >
+          <ul>
+            <li>Previous Update - BMS project finalization</li>
+            <li>Latest Update - Template creation</li>
+            <li>Next Update - Placeholder Content & Data files</li>
+          </ul>
+        </VersionNotice>
+      }
 
-      <PrecacheControl/>
+      {featureControl.predownload == 'true' &&
+        <PrecacheControl/>
+      }
+      
       
     </div>
   )
