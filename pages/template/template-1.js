@@ -1,18 +1,22 @@
 /*===== Components =====*/
-import React, { useState, useEffect } from 'react';
-import { router } from 'next/router'
-import Head from 'next/head'
-import Link from 'next/link'
-import $ from 'jquery'
-import Layout, { siteData } from '@components/layout'
+  //Utility Components
+  import React, { useState, useEffect } from 'react';
+  import { router } from 'next/router'
+  import Head from 'next/head'
+  import Link from 'next/link'
+  import $ from 'jquery'
+  import Layout, { siteData, featureControl } from '@components/layout'
 
-import DynamicHeader from '@components/DynamicHeader'
-import DynamicFooter from '@components/DynamicFooter'
-import ComputerFrame from '@components/SVGComponents/ComputerFrame'
-import TransitionScreen from '@components/SVGComponents/TransitionScreen'
-import BlockQuote from '@components/ContentComponents/BlockQuote'
-import PdfThumbnail from '@components/ContentComponents/PdfThumbnail'
-import QRCodePreset from "@components/ContentComponents/QRCodePreset";
+  //Page Components
+  import DynamicHeader from '@components/DynamicHeader'
+  import DynamicFooter from '@components/DynamicFooter'
+  import ComputerFrame from '@components/SVGComponents/ComputerFrame'
+  import TransitionScreen from '@components/SVGComponents/TransitionScreen'
+
+  //Content Components
+  import BlockQuote from '@components/ContentComponents/BlockQuote'
+  import PdfThumbnail from '@components/ContentComponents/PdfThumbnail'
+  import QRCodePreset from "@components/ContentComponents/QRCodePreset";
 
 /*===== Styles =====*/
   import utilStyles from '@styles/utils.module.css'
