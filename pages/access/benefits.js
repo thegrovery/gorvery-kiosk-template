@@ -79,7 +79,7 @@ export default function Post({ postData }) {
       <div className={pageStyles.pageLayout}>
         {/*Header*/}
         <DynamicHeader
-          heading={["What to Expect from a Benefits Review"]}
+          heading={["Section 2, ", <strong>Page 1</strong>]}
         />
 
         {/*Content*/}
@@ -91,19 +91,20 @@ export default function Post({ postData }) {
 
               <div className={pageStyles.oneColumn}>                  
                   <BlockQuote icon="/images/icons/contentFormIcon.svg">
-                      <h2>Initiate a Benefits Review (BR) by accurately completing and submitting enrollment and PAA forms. </h2>
+                      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
                       <ul>  
-                        <li>Your BMS Access Support Patient Access Specialist will review the patient’s insurance coverage for the prescribed BMS medication</li>
-                        <li>You will receive a summary of benefits within approximately 24 hours</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                       </ul> 
                   </BlockQuote>
 
-                  <h2>The Summary of Benefits will determine:</h2>
+                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
                   <ul>  
-                    <li>If a medication is covered by a patient’s insurance plan</li>
-                    <li>If a prior authorization is required</li>
-                    <li>The estimated patient out-of-pocket costs, the out-of-pocket maximum, and if there is a deductible</li>
-                    <li>If there is a preferred specialty pharmacy, optional specialty pharmacy, or open specialty pharmacy network (applies to orals or HCP-administered medications when buy &amp; bill is not an option)</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                   </ul> 
               </div>
               
@@ -112,15 +113,14 @@ export default function Post({ postData }) {
               <div className={pageStyles.twoColumn}>
                 {/*LEFT CELL*/}
                 <div className={pageStyles.cell}>
-                    <h2>For HCP-Administered products, the following additional information will be provided:</h2>
+                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h2>
                     <ul>
-                      <li>The office and administration co-pay/co-insurance amounts</li>
-                      <li>If the administering physician is in network</li>
-                      <li>The preferred/required procurement process (e.g., buy &amp; bill or specialty pharmacy)</li>
-                      <li>Timely filing guidelines for claims/appeals </li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                     </ul>        
                     <BlockQuote icon="/images/icons/contentCalendarIcon.svg">
-                      <p><strong>For patients who are enrolled in BMS Access Support</strong>, reverification of benefits is available upon HCP request for each new calendar year to confirm a patient’s continued access and minimize disruption in therapy.</p>
+                      <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong></p>
                     </BlockQuote>          
                 </div>               
 
@@ -128,7 +128,7 @@ export default function Post({ postData }) {
                 <div className={pageStyles.cell} data-centered>
                   <PdfThumbnail 
                     name="Sample forms"
-                    thumbnail="/images/thumbnails/N0-US-2200225_BMS10288 AS Sample SOB Form_Site of Care_FINAL.png"
+                    thumbnail="https://placehold.co/400x600"
                     url="/pdf/N0-US-2200225_BMS10288 AS Sample SOB Form_Site of Care_FINAL.pdf"
                   />
                 </div>

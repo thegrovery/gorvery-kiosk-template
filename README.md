@@ -67,7 +67,7 @@ This project uses Netlify's auto-deploy functions.  Every time you push to your 
 This project uses a `main` branch and a `staging` branch.  All updates should be first pushed to staging to be tested, and then pushed to main when fully vetted.  Main should ideally only ever be updated by merging/PR'ing from staging, and never directly from a regular branch.
 
 ### Branch Naming Conventions
-New branches should use the following naming convention: `category--specific-name`.  This makes it easier to read/search branch names, and makes the purpose of the branch clear.  Note: git disallows spaces in branch names and uses dashes instead; therefore the double dash `--` acts as a deliniator for the category name.
+New branches should use the following naming convention: `category--specific-name`.  This makes it easier to read/search branch names, and makes the purpose of the branch clear.  Note: git disallows spaces in branch names and uses dashes instead; therefore the double dash `--` acts as a delineator for the category name.
 
 Example branch names:
 - `feature--form-popup`
@@ -96,7 +96,7 @@ Template uses HubSpot forms.  Be sure to clone a new form and update the form in
 ```
 
 ### Assets Checklist
-When you start the project, check in with the projects's manager for the following:
+When you start the project, check in with the project's manager for the following:
 - Font files
 - Logo(s) - as PNGs or SVGs
 - Favicon - you can usually resize the logo for this
@@ -110,3 +110,13 @@ When you start the project, check in with the projects's manager for the followi
 - [react-icons](https://react-icons.github.io/react-icons)
 - [swiper](https://swiperjs.com/)
 - [normalize.css](https://necolas.github.io/normalize.css/)
+
+### Unique Issues With Project Type
+
+> ==Summary==: Individual users can not be directly tracked in an event format.  Individual users can be tracked indirectly via UTM codes attached to QR code links. 
+
+This project is intended to be used as a in-person, walk-up experience at an event such as a conference or convention, and is not primarily intended as a publicly accessible site (although it can be used as that).  Because of this, the site's "users" will typically only be the displays and/or tablets being used at the client's event, rather than the devices of each individual user as you would usually expect.  
+
+This means you will have to treat user analytics differently - ignoring specific user data and focusing mainly on how many times each inner page was viewed.
+
+There should be no way for the user to click out of the site/experience - the only links leading outside the site should be QR codes, and all QR codes should include UTM tracking parameters

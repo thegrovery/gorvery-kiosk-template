@@ -1,26 +1,38 @@
 /*===== Components =====*/
-import React, { useState, useEffect } from 'react';
-import { router } from 'next/router'
-import Head from 'next/head'
-import Link from 'next/link'
-import $ from 'jquery'
-import Layout, { siteData } from '@components/layout'
+  //Utility Components
+  import React, { useState, useEffect } from 'react';
+  import { router } from 'next/router'
+  import Head from 'next/head'
+  import Link from 'next/link'
+  import $ from 'jquery'
+  import Layout, { siteData, featureControl } from '@components/layout'
 
-import DynamicHeader from '@components/DynamicHeader'
-import DynamicFooter from '@components/DynamicFooter'
-import ComputerFrame from '@components/SVGComponents/ComputerFrame'
-import TransitionScreen from '@components/SVGComponents/TransitionScreen'
-import BlockQuote from '@components/ContentComponents/BlockQuote'
-import PdfThumbnail from '@components/ContentComponents/PdfThumbnail'
-import QRCodePreset from "@components/ContentComponents/QRCodePreset";
+  //Page Components
+  import DynamicHeader from '@components/DynamicHeader'
+  import DynamicFooter from '@components/DynamicFooter'
+  import ComputerFrame from '@components/SVGComponents/ComputerFrame'
+  import TransitionScreen from '@components/SVGComponents/TransitionScreen'
+
+  //Content Components
+  import BlockQuote from '@components/ContentComponents/BlockQuote'
+  import PdfThumbnail from '@components/ContentComponents/PdfThumbnail'
+  import QRCodePreset from "@components/ContentComponents/QRCodePreset";
 
 /*===== Styles =====*/
-import utilStyles from '@styles/utils.module.css'
-import pageStyles from '@styles/pages.module.scss'
+  import utilStyles from '@styles/utils.module.css'
+  import pageStyles from '@styles/pages.module.scss'
 
-let title = "PA & Appeals Support";
-//{["Using the My BMS Cases ", <strong>Provider Portal</strong>]}
-let footerText = "";
+/*====================*/
+/*===== Page Vars =====*/
+/*====================*/
+  let title = "Template Pages, Template Page 1";
+  let titleFormatted = ["Template Pages, ", <strong>Template Page 1</strong>]
+  let footerText = "";
+  let transitionScreen = "5";
+  let computerFrame = "3";
+  let backgroundColor = "cream"
+  let pageActionState = "lvl-3"
+  let backButtonUrl = "/access"
 
 export default function Post({ postData }) {
 
@@ -68,8 +80,8 @@ export default function Post({ postData }) {
   return (
     <Layout 
       access 
-      pageActionState="lvl-3" 
-      backButtonUrl="/access"
+      pageActionState={pageActionState} 
+      backButtonUrl={backButtonUrl}
     >
       
       <Head>
@@ -78,14 +90,14 @@ export default function Post({ postData }) {
       <div className={pageStyles.pageLayout}>
         {/*Header*/}
         <DynamicHeader
-          heading={["Section 2, ", <strong>Page 2</strong>]}
+          heading={titleFormatted}
         />
 
         {/*Content*/}
-        <div className={pageStyles.pageLevel3} data-bg-color="cream">          
-          <TransitionScreen screen="5"/>   
+        <div className={pageStyles.pageLevel3} data-bg-color={backgroundColor}>          
+          <TransitionScreen screen={transitionScreen}/>   
           <section className={pageStyles.mainSection}>
-            <ComputerFrame frame="3">
+            <ComputerFrame frame={computerFrame}>
               {/*Inner Page Content*/}
 
               <div className={pageStyles.twoColumn}>
@@ -93,12 +105,11 @@ export default function Post({ postData }) {
                 <div className={pageStyles.cell}>
                   
                   <BlockQuote icon="/images/icons/contentListIcon.svg">
-                  {/*<h2>Prior Authorization (PA)</h2>*/}
-                  <h2>Lorem ipsum dolor sit amet</h2>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                  </ul>
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <ul>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    </ul>
                   </BlockQuote>
 
                   <h2>Lorem ipsum dolor sit amet</h2>
@@ -108,12 +119,9 @@ export default function Post({ postData }) {
                   </ul>
 
                   <BlockQuote icon="/images/icons/contentClipboardIcon.svg">
-                    <h2>Appeals Support </h2>
+                    <h2>Lorem ipsum dolor sit amet</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <ul>
-                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                     </ul>
@@ -129,7 +137,7 @@ export default function Post({ postData }) {
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <QRCodePreset 
                     link="https://www.bmsaccessmap.com/opdivo?utm_source=bms_congress_access_app&utm_medium=qr_code_scan&utm_campaign=congress_access_event"
-                    toolTipText="Scan to visit BMS Access Payer Map"
+                    toolTipText="Scan for Lorem Ipsum"
                     toolTipPlacement="right"
                   />
 
@@ -138,7 +146,7 @@ export default function Post({ postData }) {
                   <img src="https://placehold.co/400x200" alt="" />
                   <QRCodePreset 
                     link="https://www.bmsaccesssupport.bmscustomerconnect.com/forms-resources?utm_source=bms_congress_access_app&utm_medium=qr_code_scan&utm_campaign=congress_access_event"
-                    toolTipText="Scan for PA &amp; Appeals Forms &amp; Resources"
+                    toolTipText="Scan for Lorem Ipsum"
                     toolTipPlacement="right"
                   />
                 </div>

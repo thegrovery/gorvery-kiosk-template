@@ -93,17 +93,17 @@ export default function Post({ postData }) {
                 {/*LEFT CELL*/}
                 <div className={pageStyles.cell}>
 
-                  <h2>We offer product-specific Billing &amp; Coding resources for your healthcare office.</h2>
+                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
                   <BlockQuote icon="/images/icons/contentClipboardIcon.svg">
-                    <p><strong>Billing &amp; Coding Guides</strong> provide an overview of relevant product and diagnosis codes, dosing and administration, and general reimbursement information.</p>
+                    <p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                   </BlockQuote>
 
                   <BlockQuote icon="/images/icons/contentClipboardIcon.svg">
-                    <p><strong>Online Code Search Tool</strong> allows providers to type in a keyword to find a specific HCPCS, CPT, NDC, 5010, or ICD-10 code.</p>
+                    <p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                   </BlockQuote>
 
                   <BlockQuote icon="/images/icons/contentListIcon.svg">
-                    <p><strong>Sample Claim Forms</strong> call out where to enter important information on health insurance claim forms (e.g., drug name, dosing information, HCPCS code, etc.).</p>
+                    <p><em>Lorem ipsum dolor sit amet</em>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                   </BlockQuote>
                   <br/>
                   
@@ -112,10 +112,10 @@ export default function Post({ postData }) {
 
                 {/*RIGHT CELL*/}
                 <div className={pageStyles.cell} data-centered>
-                  <img src="/images/content/billing-coding-medselector-img-v2.png" alt="" />
+                  <img src="https://placehold.co/400x600" alt="" />
                   <QRCodePreset 
                     link="https://www.bmsaccesssupport.bmscustomerconnect.com/?utm_source=bms_congress_access_app&utm_medium=qr_code_scan&utm_campaign=congress_access_event"
-                    toolTipText="Scan to access Reimbursement Guides available for all relevant products at BMSAccessSupport.com"
+                    toolTipText="Scan For Lorem Ipsum"
                     toolTipPlacement="right"
                   />
                 </div>
