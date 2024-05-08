@@ -1,12 +1,12 @@
 /**
  * @type {import('next').NextConfig}
  */
-const withPWA = require('next-pwa')({
+const withPWA = require('@ducanh2912/next-pwa').default({
   dest: 'public',
   runtimeCaching: [{
       // Routing via a matchCallback function:
       urlPattern: '**/\.(?:html|js|css|jpg|png|svg)$/,',
-      handler:'NetworkFirst'
+      handler:'CacheFirst'
   }]
 })
 
@@ -22,7 +22,7 @@ const nextConfig = withPWA({
   trailingSlash: true,
 
   //REDIRECTS
-  async redirects() {
+  /*async redirects() {
     return [
       {
         source: '/redirect-test',
@@ -30,7 +30,7 @@ const nextConfig = withPWA({
         permanent: true,
       },
     ]
-  }
+  }*/
 
 })
 
